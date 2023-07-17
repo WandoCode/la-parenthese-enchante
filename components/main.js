@@ -1,6 +1,7 @@
 const template = document.createElement('template')
 
 template.innerHTML = `
+    <header-comp></header-comp>
     <main>
       <div>
         <picture class="pictures">
@@ -18,6 +19,7 @@ template.innerHTML = `
       </div>
       <slot name="main-content"></slot>
     </main>
+    <footer-comp></footer-comp>
   `
 
 export default class MainComp extends HTMLElement {
