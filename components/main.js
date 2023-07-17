@@ -6,8 +6,8 @@ template.innerHTML = `
         <picture class="pictures">
           <source
             srcset=""
-            media="(max-width: 500px)"
-            class="pictures__sm"
+            media=""
+            class="pictures__source"
           />
           <img
             class="pictures__lg"
@@ -31,13 +31,24 @@ export default class MainComp extends HTMLElement {
   }
 
   updateMainImgSrc() {
-    const mainImgSm = this.shadowRoot.querySelector('.pictures__sm')
+    const mainImgSource = this.shadowRoot.querySelector('.pictures__source')
     const mainImgLg = this.shadowRoot.querySelector('.pictures__lg')
 
-    const srcSetStr = this.getAttribute('data-srcset')
-    const srcSet = srcSetStr.split(' ')
+    const srcSet = this.getParsedSrcset()
+    const media = this.getMediaAttribute()
+
+    mainImgSource.srcset = srcSet[0]
+    mainImgSource.media = media
 
     mainImgLg.src = srcSet[1]
-    mainImgSm.srcset = srcSet[0]
+  }
+
+  getParsedSrcset() {
+    const srcSetStr = this.getAttribute('data-srcset')
+    return srcSetStr.split(' ')
+  }
+
+  getMediaAttribute() {
+    return this.getAttribute('media')
   }
 }
