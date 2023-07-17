@@ -1,4 +1,4 @@
-const logoImgSrc = '../public/logo_sm.png'
+const logoImgSrc = '../public/logo_sm.svg'
 const burgerImgSrc = '../public/burger_menu.svg'
 
 const template = document.createElement('template')
@@ -6,11 +6,11 @@ const template = document.createElement('template')
 template.innerHTML = `
     <header>
       <button class="burger-menu">
-        <img class="burger-menu_img" src=''/>
+        <img class="burger-menu__img" src='' alt="Burger menu"/>
       </button>
-      <a href="/" aria-label="Page d'accueil de La Parenthèse enchantée">
+      <a href="/" aria-label="Page d'accueil de La parenthèse enchantée">
         <div class="logo">
-        <img class="logo_img" src=''/>
+        <img class="logo__img" src='' alt="Logo de La parenthèse enchantée"/>
       </a>
       <p>La parenthèse enchantée</p>
       </div>
@@ -47,12 +47,12 @@ export default class Header extends HTMLElement {
   }
 
   updateBurgerImgSrc(newSrc) {
-    const burgerBtnImg = this.shadowRoot.querySelector('.burger-menu_img')
+    const burgerBtnImg = this.shadowRoot.querySelector('.burger-menu__img')
     burgerBtnImg.src = newSrc
   }
 
   updateLogoImgSrc(newSrc) {
-    const logoImg = this.shadowRoot.querySelector('.logo_img')
+    const logoImg = this.shadowRoot.querySelector('.logo__img')
     logoImg.src = newSrc
   }
 }
