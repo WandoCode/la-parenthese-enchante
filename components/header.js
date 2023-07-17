@@ -13,3 +13,10 @@ const template = `
       </nav>
     </header>
 `
+
+export default class Header extends HTMLElement {
+  constructor() {
+    super()
+    this.innerHTML = template
+  }
+}
