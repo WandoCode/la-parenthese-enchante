@@ -1,3 +1,6 @@
+const logoImgSrc = '../public/logo_sm.png'
+const burgerImgSrc = '../public/burger_menu.svg'
+
 const template = document.createElement('template')
 
 template.innerHTML = `
@@ -19,7 +22,7 @@ template.innerHTML = `
         </ul>
       </nav>
     </header>
-`
+  `
 
 export default class Header extends HTMLElement {
   constructor() {
@@ -27,10 +30,17 @@ export default class Header extends HTMLElement {
     this.attachShadow({ mode: 'open' })
     this.shadowRoot.appendChild(template.content.cloneNode(true))
 
-    const burgerBtnImg = this.shadowRoot.querySelector('.burger-menu_img')
-    burgerBtnImg.src = '../public/burger_menu.svg'
+    this.updateBurgerImgSrc(burgerImgSrc)
+    this.updateLogoImgSrc(logoImgSrc)
+  }
 
+  updateBurgerImgSrc(newSrc) {
+    const burgerBtnImg = this.shadowRoot.querySelector('.burger-menu_img')
+    burgerBtnImg.src = newSrc
+  }
+
+  updateLogoImgSrc(newSrc) {
     const logoImg = this.shadowRoot.querySelector('.logo_img')
-    logoImg.src = '../public/logo_sm.png'
+    logoImg.src = newSrc
   }
 }
