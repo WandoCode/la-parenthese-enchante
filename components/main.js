@@ -1,8 +1,3 @@
-const mainImgSrcSet = {
-  sm: './public/bottle-salt-sm.png',
-  lg: './public/bottle-salt-lg.png',
-}
-
 const template = document.createElement('template')
 
 template.innerHTML = `
@@ -32,14 +27,17 @@ export default class MainComp extends HTMLElement {
     this.attachShadow({ mode: 'open' })
     this.shadowRoot.appendChild(template.content.cloneNode(true))
 
-    this.updateMainImgSrc(mainImgSrcSet)
+    this.updateMainImgSrc()
   }
 
-  updateMainImgSrc(newSrcSet) {
+  updateMainImgSrc() {
     const mainImgSm = this.shadowRoot.querySelector('.pictures__sm')
     const mainImgLg = this.shadowRoot.querySelector('.pictures__lg')
 
-    mainImgLg.src = newSrcSet.lg
-    mainImgSm.srcset = newSrcSet.sm
+    const srcSetStr = this.getAttribute('data-srcset')
+    const srcSet = srcSetStr.split(' ')
+
+    mainImgLg.src = srcSet[1]
+    mainImgSm.srcset = srcSet[0]
   }
 }
