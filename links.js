@@ -1,12 +1,12 @@
 const links = {
   homepage: '/',
-  massages: '/massages',
-  reservation: '/reservation',
-  about: '/about',
-  faq: '/faq',
-  contact: 'contact',
-  cgv: '/conditions-generales',
-  privacy: '/privacy',
+  massages: '/page/massages.html',
+  reservation: '/page/reservation.html',
+  about: '/page/about.html',
+  faq: '/page/faq.html',
+  contact: '/page/contact.html',
+  cgv: '/page/conditions-generales.html',
+  privacy: '/page/privacy.html',
   maximeWebsite: 'https://www.maxime-chirez.me',
 }
 
