@@ -8,17 +8,29 @@ template.innerHTML = `
       <button class="burger-menu">
         <img class="burger-menu_img" src=''/>
       </button>
-      <div class="logo">
-      <img class="logo_img" src=''/>
+      <a href="/" aria-label="Page d'accueil de La Parenthèse enchantée">
+        <div class="logo">
+        <img class="logo_img" src=''/>
+      </a>
       <p>La parenthèse enchantée</p>
       </div>
       <nav id="main-nav">
         <ul>
-          <li>Accueil</li>
-          <li>Les massages</li>
-          <li>Réservation</li>
-          <li>Qui suis-je?</li>
-          <li>Infos pratiques</li>
+          <li>
+            <a href="/">Accueil</a>
+          </li>
+          <li>
+            <a href="/massages">Les massages</a>
+          </li>
+          <li>
+            <a href="/reservation">Réservation</a>
+          </li>
+          <li>
+            <a href="/about">Qui suis-je?</a>
+          </li>
+          <li>
+            <a href="/faq">Infos pratiques</a>
+          </li>
         </ul>
       </nav>
     </header>
