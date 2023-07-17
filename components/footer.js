@@ -1,6 +1,6 @@
 import links from '../links.js'
 
-const logoImgSrc = './public/logo_text.svg'
+const logoImgSrc = '../public/logo_text.svg'
 
 const template = document.createElement('template')
 
