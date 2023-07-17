@@ -13,6 +13,11 @@ template.innerHTML = `
       </h2>
       <a href="${links.massages}">Découvrir</a>
       <a href="${links.reservation}">Réserver</a>
+      <div>
+        <p>*  Belgique: Tournai, Mouscron, Brunehaut, Frasnes, Leuze, etc.</p>
+        <p>France: Lille et Saint-Amand</p>
+        <p>En cas de doute, contactez la masseuse.</p>
+      </div>
     </div>
   `
 
