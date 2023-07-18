@@ -6,7 +6,7 @@ template.innerHTML = `
     <div>
       <h1>
         Découvrez l'harmonie du bien-être: offrez à votre corps une expérience
-        de relaxation ultime à domicile, jusquà 20km de Tournai*
+        de relaxation ultime à domicile, jusqu'à 20km de Tournai*
       </h1>
       <h2>
         Ressourcez-vous avec les massages des cinq continents à la maison

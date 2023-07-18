@@ -11,9 +11,9 @@ template.innerHTML = `
             class="pictures__source"
           />
           <img
-            class="pictures__lg"
+            class="pictures__img"
             src=""
-            alt="Essential oil in a bottle on blue salt"
+            alt=""
           />
         </picture>
       </div>
@@ -34,7 +34,7 @@ export default class MainComp extends HTMLElement {
 
   updateMainImgSrc() {
     const mainImgSource = this.shadowRoot.querySelector('.pictures__source')
-    const mainImgLg = this.shadowRoot.querySelector('.pictures__lg')
+    const mainImg = this.shadowRoot.querySelector('.pictures__img')
 
     const srcSet = this.getParsedSrcset()
     const media = this.getMediaAttribute()
@@ -42,7 +42,8 @@ export default class MainComp extends HTMLElement {
     mainImgSource.srcset = srcSet[0]
     mainImgSource.media = media
 
-    mainImgLg.src = srcSet[1]
+    mainImg.src = srcSet[1]
+    mainImg.alt = this.getAltAttribute()
   }
 
   getParsedSrcset() {
@@ -52,5 +53,9 @@ export default class MainComp extends HTMLElement {
 
   getMediaAttribute() {
     return this.getAttribute('media')
+  }
+
+  getAltAttribute() {
+    return this.getAttribute('alt')
   }
 }
