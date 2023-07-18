@@ -1,5 +1,5 @@
 const links = {
-  homepage: '/page/index.html',
+  homepage: '/',
   massages: '/page/massages.html',
   reservation: '/page/reservation.html',
   about: '/page/about.html',
