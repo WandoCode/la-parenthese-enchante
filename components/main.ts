@@ -27,17 +27,23 @@ export default class MainComp extends HTMLElement {
     super()
 
     this.attachShadow({ mode: 'open' })
-    this.shadowRoot.appendChild(template.content.cloneNode(true))
+    this.shadowRoot?.appendChild(template.content.cloneNode(true))
 
     this.updateMainImgSrc()
   }
 
   updateMainImgSrc() {
-    const mainImgSource = this.shadowRoot.querySelector('.pictures__source')
-    const mainImg = this.shadowRoot.querySelector('.pictures__img')
+    const mainImgSource = this.shadowRoot?.querySelector(
+      '.pictures__source'
+    ) as HTMLSourceElement
+    const mainImg = this.shadowRoot?.querySelector(
+      '.pictures__img'
+    ) as HTMLImageElement
 
     const srcSet = this.getParsedSrcset()
     const media = this.getMediaAttribute()
+
+    if (!mainImg || !mainImgSource || !srcSet) return
 
     mainImgSource.srcset = srcSet[0]
     mainImgSource.media = media
@@ -48,14 +54,14 @@ export default class MainComp extends HTMLElement {
 
   getParsedSrcset() {
     const srcSetStr = this.getAttribute('data-srcset')
-    return srcSetStr.split(' ')
+    return srcSetStr?.split(' ')
   }
 
   getMediaAttribute() {
-    return this.getAttribute('media')
+    return this.getAttribute('media') ?? ''
   }
 
   getAltAttribute() {
-    return this.getAttribute('alt')
+    return this.getAttribute('alt') ?? ''
   }
 }
