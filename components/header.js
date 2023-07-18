@@ -1,7 +1,7 @@
 import links from '../links.js'
 
-const logoImgSrc = '../public/logo_sm.svg'
-const burgerImgSrc = '../public/burger_menu.svg'
+const burgerImgSrc = new URL('/public/burger_menu.svg', import.meta.url)
+const logoImgSrc = new URL('/public/logo_sm.svg', import.meta.url)
 
 const template = document.createElement('template')
 
@@ -43,8 +43,8 @@ export default class Header extends HTMLElement {
     this.attachShadow({ mode: 'open' })
     this.shadowRoot.appendChild(template.content.cloneNode(true))
 
-    this.updateBurgerImgSrc(burgerImgSrc)
-    this.updateLogoImgSrc(logoImgSrc)
+    this.updateBurgerImgSrc(burgerImgSrc.pathname)
+    this.updateLogoImgSrc(logoImgSrc.pathname)
   }
 
   updateBurgerImgSrc(newSrc) {

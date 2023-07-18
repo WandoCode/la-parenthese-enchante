@@ -2,9 +2,9 @@
   "name": "la-parenthese-enchante",
   "version": "1.0.0",
   "description": "Source code for the \"La parenthese enchantee\" website",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html ./page/massages.html --open",
+    "build": "parcel build index.html ./page/massages.html"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/WandoCode/la-parenthese-enchante/issues"
   },
-  "homepage": "https://github.com/WandoCode/la-parenthese-enchante#readme"
+  "homepage": "https://github.com/WandoCode/la-parenthese-enchante#readme",
+  "staticFiles": {
+    "staticPath": "public",
+    "staticOutPath": "/public"
+  },
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "parcel-reporter-static-files-copy": "^1.5.0"
+  }
 }
