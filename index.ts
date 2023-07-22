@@ -1,8 +1,8 @@
-import Header from './components/header.js'
-import Footer from './components/footer.js'
-import MainComp from './components/main.js'
-import Homepage from './components/page-content/homepage.js'
-import Massages from './components/page-content/massages.js'
+import Header from './components/header.ts'
+import Footer from './components/footer.ts'
+import MainComp from './components/main.ts'
+import Homepage from './components/page-content/homepage.ts'
+import Massages from './components/page-content/massages.ts'
 
 customElements.define('header-comp', Header)
 customElements.define('footer-comp', Footer)

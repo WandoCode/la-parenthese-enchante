@@ -1,4 +1,4 @@
-import links from '../../links.js'
+import links from '../../datas/links.ts'
 
 const template = document.createElement('template')
 
@@ -26,6 +26,6 @@ export default class Hompepage extends HTMLElement {
     super()
 
     this.attachShadow({ mode: 'open' })
-    this.shadowRoot.appendChild(template.content.cloneNode(true))
+    this.shadowRoot?.appendChild(template.content.cloneNode(true))
   }
 }

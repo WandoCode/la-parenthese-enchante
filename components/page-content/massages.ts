@@ -14,6 +14,6 @@ export default class Massages extends HTMLElement {
     super()
 
     this.attachShadow({ mode: 'open' })
-    this.shadowRoot.appendChild(template.content.cloneNode(true))
+    this.shadowRoot?.appendChild(template.content.cloneNode(true))
   }
 }

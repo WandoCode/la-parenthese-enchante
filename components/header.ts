@@ -1,4 +1,4 @@
-import links from '../links.js'
+import links from '../datas/links.js'
 
 const burgerImgSrc = new URL('/public/burger_menu.svg', import.meta.url)
 const logoImgSrc = new URL('/public/logo_sm.svg', import.meta.url)
@@ -41,19 +41,23 @@ export default class Header extends HTMLElement {
   constructor() {
     super()
     this.attachShadow({ mode: 'open' })
-    this.shadowRoot.appendChild(template.content.cloneNode(true))
+    this.shadowRoot?.appendChild(template.content.cloneNode(true))
 
     this.updateBurgerImgSrc(burgerImgSrc.pathname)
     this.updateLogoImgSrc(logoImgSrc.pathname)
   }
 
-  updateBurgerImgSrc(newSrc) {
-    const burgerBtnImg = this.shadowRoot.querySelector('.burger-menu__img')
+  updateBurgerImgSrc(newSrc: string) {
+    const burgerBtnImg = this.shadowRoot?.querySelector(
+      '.burger-menu__img'
+    ) as HTMLImageElement
     burgerBtnImg.src = newSrc
   }
 
-  updateLogoImgSrc(newSrc) {
-    const logoImg = this.shadowRoot.querySelector('.logo__img')
+  updateLogoImgSrc(newSrc: string) {
+    const logoImg = this.shadowRoot?.querySelector(
+      '.logo__img'
+    ) as HTMLImageElement
     logoImg.src = newSrc
   }
 }
