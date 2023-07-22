@@ -1,4 +1,4 @@
-import links from '/links.ts'
+import links from '../datas/links.ts'
 const logoImgSrc = new URL('/public/logo_text.svg', import.meta.url)
 
 const template = document.createElement('template')
@@ -67,7 +67,7 @@ export default class Footer extends HTMLElement {
     this.updateLogoImgSrc(logoImgSrc.pathname)
   }
 
-  updateLogoImgSrc(newSrc) {
+  updateLogoImgSrc(newSrc: string) {
     const logoImg = this.shadowRoot?.querySelector(
       '.logo__img'
     ) as HTMLImageElement
